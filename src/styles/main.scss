@@ -1,8 +1,355 @@
 // === GLOBALS === //
 @import './globals/normalize.scss';
 @import './globals/settings.scss';
+@import './globals/templates.scss';
 @import './globals/mixins.scss';
 @import './globals/fonts.scss';
 @import './globals/functions.scss';
 @import './globals/vars.scss';
 // === / GLOBALS === //
+
+// === COMMON === //
+.section-outer {
+    width: 1920px;
+    margin: 0 auto;
+}
+
+.section-inner {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.vertical-indent {
+    @mixin vertical-indent($size-t, $size-b) {
+        padding-top: $size-t;
+        padding-bottom: $size-b;
+    }
+
+    &--xs { @include vertical-indent(30px, 80px); }
+    &--s { @include vertical-indent(36px, 36px); }
+    &--m { @include vertical-indent(62px, 50px); }
+}
+
+.navbar-wrapper {
+    background-color: #000;
+}
+
+.navbar-inner-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-list {
+    display: flex;
+    justify-content: space-between;
+    min-width: 370px;
+}
+
+.link {
+    @include ptsans;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #fff;
+}
+
+.search-icon {
+    width: 16px;
+    height: 17px;
+
+    background: url('../img/search-icon.svg') no-repeat;
+}
+
+.logo {
+    &--bottom {
+        margin-bottom: 23px;
+    }
+}
+
+.logo__text {
+    @include lato;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #fff;
+}
+
+.tag {
+    display: inline-block;
+    padding: 3px 12px;
+
+    @include ptsans;
+    font-size: 12px;
+    line-height: 16px;
+
+    color: #fff;
+    background-color: #4a90e2;
+    border-radius: 3px;
+
+    &--logo {
+        padding: 3px 5px;
+        margin-left: 5px;
+
+        @include lato;
+        font-size: 14px;
+        line-height: 18px;
+
+        text-transform: uppercase;
+    }
+
+    &--bmw {
+        padding: 3px 18px;
+
+        text-transform: uppercase;
+    }
+}
+
+h3 {
+    @include ptsans-b;
+    font-size: 20px;
+    line-height: 26x;
+
+    color: #fff;
+}
+
+.btn {
+    width: 100%;
+    padding: 16px 0;
+
+    @include ptsans-b;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #fff;
+    background-color: #232323;
+    border-radius: 3px;
+}
+
+.form-input {
+    width: 100%;
+    height: 50px;
+    padding: 16px;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+
+    &[placeholder] {
+        @include ptsans;
+        font-size: 14px;
+        line-height: 18px;
+
+        color: #aeb3bb;
+    }
+
+    &--dark {
+        background-color: #373737;
+        border: 0;
+    }
+}
+// === / COMMON === //
+
+// === HEADER === //
+
+// === / HEADER === //
+
+// === UPPER-PART-BLOCK === //
+.upper-part-block {
+    display: grid;
+    grid-template-columns: repeat(3, 370px);
+    grid-template-rows: repeat(2, 265px);
+    gap: 30px 30px;
+}
+
+.upper-part-block__item {
+    position: relative;
+
+    &--big {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+}
+
+.upper-part-block__item-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 30px;
+    min-height: 100%;
+}
+
+.upper-part-block__item-tag {
+    margin-bottom: 100px;
+
+    &--big {
+        margin-bottom: 390px;
+    }
+}
+
+.upper-part-block__item-info {
+    margin-bottom: 6px;
+
+    @include ptsans;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #fff;
+}
+
+
+.upper-part-block__item-text {
+    @include ptsans-b;
+    font-size: 20px;
+    line-height: 30px;
+
+    color: #fff;
+}
+// === / UPPER-PART-BLOCK === //
+
+// === FOOTER === //
+.footer-section-wrapper {
+    background-color: #171717;
+}
+
+.footer-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-section__desc {
+    width: 270px;
+}
+
+.footer-section__desc-text {
+    margin-bottom: 64px;
+
+    @include ptsans;
+    font-size: 14px;
+    line-height: 22px;
+
+    color: #cecece;
+}
+
+.footer-section__desc-title {
+    margin-bottom: 23px;
+}
+
+.footer-section__desc-socials-list {
+    display: flex;
+    justify-content: space-between;
+    width: 230px;
+}
+
+.footer-section__desc-socials-link {
+    position: relative;
+
+    display: block;
+    padding: 17px;
+
+    background-color: #373737;
+}
+
+.footer-section__desc-socials-svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &--fb {
+        width: 10px;
+        height: 16px;
+        background: url('../img/fb-icon.svg') no-repeat;
+    }
+
+    &--tw {
+        width: 16px;
+        height: 14px;
+        background: url('../img/tw-icon.svg') no-repeat;
+    }
+
+    &--pin {
+        width: 13px;
+        height: 16px;
+        background: url('../img/pin-icon.svg') no-repeat;
+    }
+
+    &--g {
+        width: 20px;
+        height: 14px;
+        background: url('../img/g-icon.svg') no-repeat;
+    }
+
+    &--inst {
+        width: 18px;
+        height: 18px;
+        background: url('../img/inst-icon.svg') no-repeat;
+    }
+}
+
+.footer-section__posts {
+    width: 300px;
+}
+
+.footer-section__posts-title {
+    margin-bottom: 28px;
+}
+
+.footer-section__posts-block {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.footer-section__posts-block-content {
+    padding: 10px 0 10px 20px;
+}
+
+.footer-section__posts-block-content-text {
+    margin-bottom: 10px;
+
+    @include ptsans-b;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #fff;
+}
+
+.footer-section__posts-block-content-info {
+    @include ptsans-i;
+    font-size: 14px;
+    line-height: 18px;
+    
+    color: #fff;
+}
+
+.footer-section__newsletter {
+    width: 270px;
+    margin-right: 100px;
+}
+
+.footer-section__newsletter-title {
+    margin-bottom: 38px;
+}
+
+.footer-section__newsletter-input {
+    margin-bottom: 10px;
+}
+
+.footer-section__newsletter-btn {
+    border: 0;
+}
+
+.copyright {
+    @include ptsans;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #fff;
+}
+// === / FOOTER === //
