@@ -53,6 +53,10 @@
     line-height: 18px;
 
     color: #fff;
+
+    &:hover {
+        color: darken(#fff, 10%);
+    }
 }
 
 .search-icon {
@@ -106,12 +110,20 @@
     }
 }
 
-h3 {
+h2 {
     @include ptsans-b;
     font-size: 20px;
-    line-height: 26x;
+    line-height: 26px;
 
     color: #fff;
+}
+
+h3 {
+    @include ptsans-b;
+    font-size: 18px;
+    line-height: 24px;
+
+    color: #171717;
 }
 
 .btn {
@@ -130,6 +142,7 @@ h3 {
     color: #fff;
     background-color: #232323;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .form-input {
@@ -157,7 +170,15 @@ h3 {
 // === / COMMON === //
 
 // === HEADER === //
+.search-button {
+    padding: 0;
 
+    line-height: 0;
+
+    border: 0;
+    background-color: #000;
+    cursor: pointer;
+}
 // === / HEADER === //
 
 // === UPPER-PART-BLOCK === //
@@ -185,6 +206,11 @@ h3 {
     left: 0;
     padding: 20px 30px;
     min-height: 100%;
+
+    &:hover .upper-part-block__item-text,
+    &:hover .upper-part-block__item-info {
+        text-decoration: underline;
+    }
 }
 
 .upper-part-block__item-tag {
@@ -228,8 +254,14 @@ h3 {
 .news-block {
     position: relative;
 
+    display: block;
     min-height: 560px;
     margin-bottom: 60px;
+
+    &:hover .news-text-block__title,
+    &:hover .news-text-block__info {
+        text-decoration: underline;
+    }
 }
 
 .news-text-block {
@@ -300,7 +332,6 @@ h3 {
     color: #171717;
 
     &--active {
-        border-color: #000;
         background-color: #000;
         color: #fff;
     }
@@ -322,10 +353,6 @@ h3 {
 
 .sidebar__top-post-title {
     margin: 20px 0 8px 0;
-
-    @include ptsans-b;
-    font-size: 18px;
-    line-height: 24px;
 
     color: #171717;
 }
@@ -356,19 +383,21 @@ h3 {
 
 .sidebar__popular-posts-title {
     margin-bottom: 22px;
-
-    @include ptsans-b;
-    font-size: 18px;
-    line-height: 24px;
 }
 
 .sidebar-post {
     position: relative;
 
+    display: block;
     margin-bottom: 39px;
 
     &:last-child {
         margin-bottom: 0;
+    }
+
+    &:hover .sidebar-post__title,
+    &:hover .sidebar-post__info {
+        text-decoration: underline;
     }
 }
 
@@ -386,6 +415,8 @@ h3 {
     @include ptsans-i;
     font-size: 14px;
     line-height: 18px;
+
+    color: #171717;
 }
 
 .sidebar-post__tag {
@@ -395,17 +426,11 @@ h3 {
 }
 
 .sidebar__instagram {
-    margin-bottom: 60px;
+    margin-bottom: 61px;
 }
 
 .sidebar__instagram-title {
-    margin-bottom: 24px;
-
-    @include ptsans-b;
-    font-size: 18px;
-    line-height: 22px;
-
-    color: #171717;
+    margin-bottom: 23px;
 }
 
 .sidebar__instagram-photos {
@@ -429,17 +454,11 @@ h3 {
 }
 
 .sidebar__tags {
-    margin-bottom: 60px;
+    margin-bottom: 61px;
 }
 
 .sidebar__tags-title {
-    margin-bottom: 25px;
-
-    @include ptsans-b;
-    font-size: 18px;
-    line-height: 22px;
-
-    color: #171717;
+    margin-bottom: 24px;
 }
 
 .sidebar__tags-wrapper {
@@ -463,12 +482,6 @@ h3 {
 
 .sidebar__email-title {
     margin-bottom: 10px;
-
-    @include ptsans-b;
-    font-size: 18px;
-    line-height: 24px;
-
-    color: #171717;
 }
 
 .sidebar__email-info {
@@ -496,10 +509,18 @@ h3 {
 .most-popular__wrapper {
     display: flex;
     justify-content: space-between;
+    column-gap: 30px;
 }
 
 .most-popular__block {
     position: relative;
+
+    display: block;
+
+    &:hover .most-popular__block-title,
+    &:hover .most-popular__block-info {
+        text-decoration: underline;
+    }
 }
 
 .most-popular__block-title {
@@ -622,6 +643,11 @@ h3 {
 
     &:last-child {
         margin-bottom: 0;
+    }
+
+    &:hover .footer-section__posts-block-content-text,
+    &:hover .footer-section__posts-block-content-info {
+        text-decoration: underline;
     }
 }
 
