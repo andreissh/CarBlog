@@ -1,13 +1,7 @@
-* {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
-}
-
-ul, ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    font-size: 0;
-    line-height: 0;
 }
 
 p {
@@ -28,13 +22,4 @@ h5,
 h6 {
     font-weight: 400;
     margin: 0;
-}
-
-figure {
-    margin: 0;
-}
-
-picture {
-    font-size: 0;
-    line-height: 0;
 }
